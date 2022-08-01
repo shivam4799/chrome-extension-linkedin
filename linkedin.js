@@ -19,8 +19,11 @@ async function sendingRequest(count) {
     }
 
     let followButton = allUsers[count].querySelector("button span");
+
+    // check for Connect and Follow Button Exist
     if (followButton && (followButton.innerText === "Connect" || followButton.innerText === "Follow")) {
       followButton.click();
+
       setTimeout(() => {
         let modal = document.querySelectorAll("#artdeco-modal-outlet button");
 
@@ -56,23 +59,6 @@ async function sendingRequest(count) {
       }
     }
   });
-
-  // startButton.innerHTML = "Completed";
-  // startButton.style.backgroundColor = "#4caf50";
-
-  // allUsers.forEach((u) => {
-  //   if (u.querySelector("button span").innerText === "Connect") {
-  //     document.querySelectorAll("#main ul li")[0].querySelector("button span").click();
-  //     await Sleep(2000)
-  //     if (document.querySelectorAll("#artdeco-modal-outlet button")[2].innerText === "Send") {
-  //       document.querySelectorAll("#artdeco-modal-outlet button")[2].click();
-  //     }
-  //   }
-  // });
-
-  // chrome.storage.sync.get("color", ({ color }) => {
-  //   document.body.style.backgroundColor = color;
-  // });
 }
 
 startButton.addEventListener("click", async () => {
@@ -102,53 +88,32 @@ startButton.addEventListener("click", async () => {
       },
       async (injectionResults) => {
         let s = injectionResults[0].result;
-        console.log(count, s);
-        // for (const frameResult of injectionResults) {
-        // let status = frameResult.result;
+
+        // if request successfully sent
         if (s === "send") {
           count++;
-          // countNumber.innerHTML = Number(countNumber.innerHTML) + 1;
-
           let countTemp = Number(document.querySelector(".percentage").innerHTML) + 1;
-
           let t = countTemp * 2;
-
           document.querySelector(".circle").style.strokeDasharray = `${t},100`;
-
           document.querySelector(".percentage").innerHTML = countTemp;
-
           setTimeout(async () => {
             await executeScript();
           }, 3000);
         } else if (s === "complete") {
+          // if all users done on page
           startButton.innerHTML = "Start Checking";
           startButton.style.backgroundColor = "#4caf50";
         } else if (s === "false") {
           count++;
           await executeScript();
         } else if (s === "error") {
+          //if error occurs
           error.innerHTML = "Please search Ceo and start process!";
           startButton.innerHTML = "Start Checking";
           startButton.style.backgroundColor = "#4caf50";
         }
-
-        // }
       }
     );
   }
   await executeScript();
-  // while (true) {
-  // console.log(count);
-
-  // }
 });
-
-// The body of this function will be executed as a content script inside the
-
-// current page
-
-// document.querySelectorAll("#main ul li")[0].querySelector("button span").innerText
-
-// document.querySelectorAll("#main ul li")[0].querySelector("button span").click()
-
-// document.querySelectorAll("#artdeco-modal-outlet button")[2].innerText
