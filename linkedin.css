@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  background-color: rgb(30, 32, 41);
+  width: 300px;
+  height: 300px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header {
+  background: rgb(46, 48, 58);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h2 {
+  color: white;
+  font-size: 18px;
+}
+
+.header svg {
+  padding: 0.5rem;
+  background: rgb(82, 85, 103);
+  width: 1.2rem;
+  height: 1.2rem;
+  color: white;
+}
+.container {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.count_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container h2 {
+  color: white;
+  font-size: 18px;
+}
+
+.container .count {
+  width: 80px;
+  height: 80px;
+  margin: 1rem 2rem;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.circular-chart {
+  display: block;
+  margin: 1rem 2rem;
+  width: 90px;
+  height: 90px;
+}
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 2.8;
+}
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  /* stroke-linecap: round; */
+}
+
+.circular-chart.green .circle {
+  stroke: #4caf50;
+}
+
+.percentage {
+  fill: #fff;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+
+.container .number {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.error_wrapper {
+  padding-bottom: 0.5rem;
+}
+.error_wrapper .error {
+  text-align: center;
+  /* color: ; */
+  /* color: #fff; */
+  color: #c82333;
+  font-size: 14px;
+  /* border-color: #bd2130; */
+}
+
+.button_contaner {
+  text-align: center;
+}
+
+#start {
+  cursor: pointer;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+}

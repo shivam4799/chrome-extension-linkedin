@@ -1,6 +1,6 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "Linkedin",
+  "description": "Linkedin Auto Send Request To CEO!",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
@@ -8,6 +8,6 @@
   },
   "permissions": ["storage", "tabs", "scripting", "activeTab"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "linkedin.html"
   }
 }
